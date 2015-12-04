@@ -1,0 +1,101 @@
+{
+  "nodes": [
+    {
+      "name": "Req 2"
+    },
+    {
+      "name": "Req 3"
+    },
+    {
+      "name": "Req 3c"
+    },
+    {
+      "name": "Req 3b"
+    },
+    {
+      "name": "System for managing customers"
+    },
+    {
+      "name": "Req 3a"
+    },
+    {
+      "name": "Req 1"
+    },
+    {
+      "name": "Decision 3a"
+    },
+    {
+      "name": "Cloud Services"
+    },
+    {
+      "name": "Decision 2"
+    },
+    {
+      "name": "Decision 3"
+    },
+    {
+      "name": "Application Server"
+    },
+    {
+      "name": "Architecture 3"
+    },
+    {
+      "name": "Architecture 1"
+    },
+    {
+      "name": "Architecture 2"
+    }
+  ],
+  "links": [
+    {
+      "source": "Decision 3a",
+      "target": "Req 3c",
+      "value": 100
+    },
+    {
+      "source": "Cloud Services",
+      "target": "Req 1",
+      "value": 100
+    },
+    {
+      "source": "Decision 2",
+      "target": "Req 2",
+      "value": 100
+    },
+    {
+      "source": "Decision 3",
+      "target": "Req 3a",
+      "value": 33.333333333333336
+    },
+    {
+      "source": "Decision 3",
+      "target": "Req 3",
+      "value": 33.333333333333336
+    },
+    {
+      "source": "Decision 3",
+      "target": "Req 3b",
+      "value": 33.333333333333336
+    },
+    {
+      "source": "Architecture 3",
+      "target": "Decision 3",
+      "value": 50
+    },
+    {
+      "source": "Architecture 3",
+      "target": "Decision 3a",
+      "value": 50
+    },
+    {
+      "source": "Architecture 1",
+      "target": "Cloud Services",
+      "value": 100
+    },
+    {
+      "source": "Architecture 2",
+      "target": "Decision 2",
+      "value": 100
+    }
+  ]
+}
