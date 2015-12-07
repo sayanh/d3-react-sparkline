@@ -195,14 +195,14 @@ class Sankey extends React.Component {
         });
 
 
-    d3.behavior.drag().call(svg.append("g").selectAll(".node"))
-            .origin(function (d) {
-              return d;
-            })
-            .on("dragstart", function () {
-              this.parentNode.appendChild(this);
-            })
-            .on("drag", dragmove);
+    //d3.behavior.drag().call(someDiv.selectAll("g").selectAll(".node"))
+    //        .origin(function (d) {
+    //          return d;
+    //        })
+    //        .on("dragstart", function () {
+    //          this.parentNode.appendChild(this);
+    //        })
+    //        .on("drag", dragmove);
 
 // add the rectangles for the nodes
     node.append("rect")
