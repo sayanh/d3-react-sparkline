@@ -19,7 +19,7 @@ class Sankey extends React.Component {
     var units = "Widgets";
 
     var margin = {top: 10, right: 10, bottom: 10, left: 10},
-        width = 100 - margin.left - margin.right,
+        width = 600 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
     var formatNumber = d3.format(",.0f"),    // zero decimal places
@@ -193,14 +193,16 @@ class Sankey extends React.Component {
         .attr("transform", function (d) {
           return "translate(" + d.x + "," + d.y + ")";
         });
-        //.call(d3.behavior.drag()
-        //    .origin(function (d) {
-        //      return d;
-        //    })
-        //    .on("dragstart", function () {
-        //      this.parentNode.appendChild(this);
-        //    })
-        //    .on("drag", dragmove));
+
+
+    d3.behavior.drag().call(svg.append("g").selectAll(".node"))
+            .origin(function (d) {
+              return d;
+            })
+            .on("dragstart", function () {
+              this.parentNode.appendChild(this);
+            })
+            .on("drag", dragmove);
 
 // add the rectangles for the nodes
     node.append("rect")
@@ -238,22 +240,22 @@ class Sankey extends React.Component {
         .attr("text-anchor", "start");
 
     //the function for moving the nodes
-    //     function dragmove(d) {
-    //       d3.select(this).attr("transform",
-    //           "translate(" + (
-    //               d.x = Math.max(0, Math.min(width - d.dx, d3.event.x))
-    //           )
-    //           + "," + (
-    //               d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
-    //           ) + ")");
-    //       sankey.relayout();
-    //       link.attr("d", path);
-    //     }
+         function dragmove(d) {
+           d3.select(this).attr("transform",
+               "translate(" + (
+                   d.x = Math.max(0, Math.min(width - d.dx, d3.event.x))
+               )
+               + "," + (
+                   d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
+               ) + ")");
+           sankey.relayout();
+           link.attr("d", path);
+         }
 
 
     return (
         <div id="chart">
-          <svg width="2000" height="1200">
+          <svg width="600" height="600">
             {someDiv.node().toReact()}
           </svg>
         </div>
